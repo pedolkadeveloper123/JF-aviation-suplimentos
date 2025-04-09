@@ -1,103 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suplementos JF Aviation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JF Aviation | Gaveteiro Inteligente</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background: #f4f6f8;
+      color: #333;
     }
+
     header {
-      background-color: #222;
-      color: #fff;
+      background: #111;
+      color: white;
+      padding: 25px 10px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search {
+      background: #e0e0e0;
       padding: 20px;
       text-align: center;
     }
-    .search {
-      padding: 10px;
-      text-align: center;
-      background: #eee;
-    }
+
     .search input {
-      width: 80%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
+
     .gavetas {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
     }
+
     .gaveta {
-      background-color: #e74c3c;
+      background: #e74c3c;
       color: white;
       padding: 20px;
       margin: 10px;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      width: 150px;
+      width: 180px;
       text-align: center;
+      font-size: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .gaveta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .gaveta::before {
+      content: "🧰 ";
+    }
+
     .detalhes {
       display: none;
       background: white;
+      margin: 20px auto;
       padding: 20px;
-      margin: 10px auto;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sem-resultados {
+      text-align: center;
+      font-size: 18px;
+      color: #999;
+      padding: 30px;
+    }
+
+    .sem-resultados::before {
+      content: "⚠️ ";
+      display: block;
+      font-size: 30px;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 40px;
+    }
+
+    footer h2 {
+      margin: 0 0 10px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>JF aviation | Gaveteiro Inteligente</h1>
+    JF Aviation | Gaveteiro Inteligente
   </header>
+
   <div class="search">
     <input type="text" id="searchInput" placeholder="Pesquisar item, código ou localização...">
   </div>
+
   <div class="gavetas" id="gavetasContainer"></div>
   <div class="detalhes" id="detalhes"></div>
+
+  <footer>
+    <h2>JF Aviation</h2>
+    <p>Renovação e simplicidade em um só lugar</p>
+    <p>&copy; 2025 - Todos os direitos reservados</p>
+  </footer>
 
   <script>
     const gavetas = [
       { codigo: "ARM1", localizacao: "1A", itens: ["FORWING", "Parafusos"] },
-
-{ codigo: "ARM1", localizacao: "3C", itens: ["SEXTAVADO ROSCA TOTAL", "Parafusos"] },
-
+      { codigo: "ARM1", localizacao: "3C", itens: ["SEXTAVADO ROSCA TOTAL", "Parafusos"] },
       { codigo: "ARM1", localizacao: "10E", itens: ["SEXTAVADA 5X32", "CASTELO GRANDE"] },
-
-{ codigo: "ARM1", localizacao: "4B", itens: ["SEXTAVADO", "SEXTAVADO COM CORPO"] },
-
-{ codigo: "ARM1", localizacao: "1A,C,D,E", itens: ["BOLEADO COM CORPO", "COM ROSCA"] },
-
-{ codigo: "ARM1", localizacao: "4C,D,E,F", itens: ["PHILLIPS", ""] },
-
-{ codigo: "ARM1", localizacao: "5A,B", itens: ["FORWING", "Parafusos"] },
-
-{ codigo: "ARM1", localizacao: "5C,D,E,F", itens: ["FORWING", ""] },
-
-{ codigo: "ARM2", localizacao: "1A", itens: ["PORCA SEXTAVADA", "6X32"] },
-
-{ codigo: "ARM SUPLI 2", localizacao: "8F", itens: ["PORCA CASTELO", "PORCA/SEXTAVADA"] },
-
-{ codigo: "ARM1", localizacao: "12F", itens: ["CLIPNUT", ""] },
-
-{ codigo: "ARM SUPLI 2", localizacao: "6B", itens: ["PARAFUSO 5X32", "FORWING"] },
-
-{ codigo: "ARM1", localizacao: "5F", itens: ["SCREW", "PARAFUSO ESTRIADO"] },
-
-{ codigo: "ARM1", localizacao: "6A", itens: ["DIVERSOS", ""] },
-
-{ codigo: "ARM1", localizacao: "1B", itens: ["SCREW", "RIVET"] },
-
+      { codigo: "ARM1", localizacao: "4B", itens: ["SEXTAVADO", "SEXTAVADO COM CORPO"] },
+      { codigo: "ARM1", localizacao: "1A,C,D,E", itens: ["BOLEADO COM CORPO", "COM ROSCA"] },
+      { codigo: "ARM1", localizacao: "4C,D,E,F", itens: ["PHILLIPS", ""] },
+      { codigo: "ARM1", localizacao: "5A,B", itens: ["FORWING", "Parafusos"] },
+      { codigo: "ARM1", localizacao: "5C,D,E,F", itens: ["FORWING", ""] },
+      { codigo: "ARM2", localizacao: "1A", itens: ["PORCA SEXTAVADA", "6X32"] },
+      { codigo: "ARM SUPLI 2", localizacao: "8F", itens: ["PORCA CASTELO", "PORCA/SEXTAVADA"] },
+      { codigo: "ARM1", localizacao: "12F", itens: ["CLIPNUT", ""] },
+      { codigo: "ARM SUPLI 2", localizacao: "6B", itens: ["PARAFUSO 5X32", "FORWING"] },
+      { codigo: "ARM1", localizacao: "5F", itens: ["SCREW", "PARAFUSO ESTRIADO"] },
+      { codigo: "ARM1", localizacao: "6A", itens: ["DIVERSOS", ""] },
+      { codigo: "ARM1", localizacao: "1B", itens: ["SCREW", "RIVET"] },
       { codigo: "ARM1", localizacao: "3A", itens: ["PARAFUSOS", "BOLT LISOS"] },
       { codigo: "ARM4", localizacao: "8C", itens: ["CLIPNUT", "CLIP DIVERSOS"] },
       { codigo: "ARM4", localizacao: "12F", itens: ["GRAXAS", "COLAS"] },
@@ -113,6 +169,10 @@
 
     function mostrarGavetas(lista) {
       container.innerHTML = '';
+      if (lista.length === 0) {
+        container.innerHTML = `<div class="sem-resultados">Nenhum resultado encontrado.</div>`;
+        return;
+      }
       lista.forEach(g => {
         const div = document.createElement('div');
         div.className = 'gaveta';
@@ -144,24 +204,6 @@
 
     mostrarGavetas(gavetas);
   </script>
-
-        <h1 class="footer__title">JF</h1>
-            <span class="footer__subtitle"
-              >Renovação e simplicidade em um só lugar!</span
-            >
-          </div>
-
-          
-          
-        <p class="footer__copy">&#169; Todos os direitos reservados 2025@</p>
-      </div>
-    </footer>
-
-    <!--================== SCROLL TOP ==================-->
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-
 
 </body>
 </html>
