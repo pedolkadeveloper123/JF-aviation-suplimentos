@@ -41,7 +41,7 @@
       margin: 10px;
       border-radius: 10px;
       cursor: pointer;
-      width: 120px;
+      width: 150px;
       text-align: center;
     }
     .detalhes {
@@ -58,7 +58,7 @@
 </head>
 <body>
   <header>
-    <h1>Suprimentos JF aviation</h1>
+    <h1>Suprimentos JF Aviation</h1>
   </header>
   <div class="search">
     <input type="text" id="searchInput" placeholder="Pesquisar item, código ou localização...">
@@ -68,17 +68,14 @@
 
   <script>
     const gavetas = [
-      { codigo: "ARM1", localizacao: "1A", itens: ["FORWING", "Parafusos"], localizacao: "3A", itens: ["PARAFUSOS", "BOLT LISOS"]  },
-
-     { codigo: "ARM4", localizacao: "8C", itens: ["CLIPNUT", "CLIP DIVERSSOS"], localizacao: "12F", itens: ["GRAXAS", "COLAS"], localizacao: "6B", itens: ["CONTRA PINO"]   },
-
-      { codigo: "ARM3 SUPRI 2", localizacao: "3A", itens: ["PARAFUSO ESTRIVADO 5/16, DIVERSOS 5/32", "ESTRIADO"] },
-
-       { codigo: "ARM3", localizacao: "5B", itens: ["RUELAS, DIVERSOS TIPO"] },
-
-       { codigo: "ARM3", localizacao: "5B", itens: ["RUELAS, DIVERSOS TIPO"] },
-
-      { codigo: "PLAT", localizacao: "6B", itens: ["RIVET 5X2", ""] }
+      { codigo: "ARM1", localizacao: "1A", itens: ["FORWING", "Parafusos"] },
+      { codigo: "ARM1", localizacao: "3A", itens: ["PARAFUSOS", "BOLT LISOS"] },
+      { codigo: "ARM4", localizacao: "8C", itens: ["CLIPNUT", "CLIP DIVERSOS"] },
+      { codigo: "ARM4", localizacao: "12F", itens: ["GRAXAS", "COLAS"] },
+      { codigo: "ARM4", localizacao: "6B", itens: ["CONTRA PINO"] },
+      { codigo: "ARM3 SUPRI 2", localizacao: "3A", itens: ["PARAFUSO ESTRIVADO 5/16", "DIVERSOS 5/32", "ESTRIADO"] },
+      { codigo: "ARM3", localizacao: "5B", itens: ["RUELAS", "DIVERSOS TIPOS"] },
+      { codigo: "PLAT", localizacao: "6B", itens: ["RIVET 5X2"] }
     ];
 
     const container = document.getElementById('gavetasContainer');
@@ -90,7 +87,7 @@
       lista.forEach(g => {
         const div = document.createElement('div');
         div.className = 'gaveta';
-        div.innerText = g.codigo;
+        div.innerText = `${g.codigo} (${g.localizacao})`;
         div.onclick = () => mostrarDetalhes(g);
         container.appendChild(div);
       });
