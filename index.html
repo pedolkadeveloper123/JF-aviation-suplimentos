@@ -146,16 +146,18 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #111;
-      color: white;
+      background-color: transparent;
+      color: #111;
       border: none;
-      padding: 10px 20px;
-      font-size: 16px;
+      font-size: 26px;
       cursor: pointer;
-      border-radius: 5px;
       z-index: 1000;
+      transition: color 0.3s ease;
     }
 
+    .dark-mode .theme-toggle {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -178,7 +180,7 @@
   </footer>
 
   <!-- Botão de troca de tema -->
-  <button class="theme-toggle" id="themeToggle">Modo Escuro</button>
+  <button class="theme-toggle" id="themeToggle">🛬</button>
 
   <script>
     const gavetas = [
@@ -227,11 +229,11 @@
       { codigo: "PLAT", localizacao: "6B", itens: ["RIVET 5X32"] }
     ];
 
+
     const container = document.getElementById('gavetasContainer');
     const detalhes = document.getElementById('detalhes');
     const searchInput = document.getElementById('searchInput');
     const themeToggle = document.getElementById('themeToggle');
-
     let isDarkMode = false;
 
     function mostrarGavetas(lista) {
@@ -250,32 +252,39 @@
     }
 
     function mostrarDetalhes(gaveta) {
-      detalhes.style.display = 'block';
-      detalhes.innerHTML = ` 
-        <h2>${gaveta.codigo}</h2>
-        <p><strong>Localização:</strong> ${gaveta.localizacao}</p>
-        <p><strong>Itens:</strong> ${gaveta.itens.join(", ")}</p>
+      detalhes.innerHTML = `
+        <h3>📍 ${gaveta.codigo} - ${gaveta.localizacao}</h3>
+        <ul>
+          ${gaveta.itens.filter(item => item).map(item => `<li>🔧 ${item}</li>`).join('')}
+        </ul>
       `;
+      detalhes.style.display = 'block';
+      window.scrollTo({ top: detalhes.offsetTop - 100, behavior: 'smooth' });
     }
 
-    // Filtro de pesquisa
-    searchInput.addEventListener('input', function() {
-      const searchValue = this.value.toLowerCase();
-      const filteredGavetas = gavetas.filter(g =>
-        g.codigo.toLowerCase().includes(searchValue) ||
-        g.localizacao.toLowerCase().includes(searchValue) ||
-        g.itens.some(item => item.toLowerCase().includes(searchValue))
+    function filtrarGavetas(termo) {
+      const termoMin = termo.toLowerCase();
+      return gavetas.filter(g =>
+        g.codigo.toLowerCase().includes(termoMin) ||
+        g.localizacao.toLowerCase().includes(termoMin) ||
+        g.itens.some(item => item.toLowerCase().includes(termoMin))
       );
-      mostrarGavetas(filteredGavetas);
+    }
+
+    searchInput.addEventListener('input', () => {
+      const termo = searchInput.value.trim();
+      const filtradas = filtrarGavetas(termo);
+      mostrarGavetas(filtradas);
+      detalhes.style.display = 'none';
     });
 
-    // Alternar tema
     themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
       isDarkMode = !isDarkMode;
-      document.body.classList.toggle('dark-mode', isDarkMode);
-      themeToggle.innerText = isDarkMode ? "Modo Claro" : "Modo Escuro";
+      themeToggle.innerText = isDarkMode ? '🛫' : '🛬';
     });
 
+    // Exibe todas ao carregar
     mostrarGavetas(gavetas);
   </script>
 </body>
