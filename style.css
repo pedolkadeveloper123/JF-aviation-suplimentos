@@ -22,6 +22,12 @@ header {
   font-weight: 600;
   letter-spacing: 1px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+header:hover {
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .search {
@@ -39,11 +45,12 @@ header {
   border: 1px solid #ccc;
   border-radius: 12px;
   outline: none;
-  transition: border 0.3s ease;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search input:focus {
   border-color: #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
 }
 
 .gavetas {
@@ -51,6 +58,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   padding: 30px 20px;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .gaveta {
@@ -67,7 +75,7 @@ header {
 }
 
 .gaveta:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
   background-color: #c0392b; /* Hover com cor mais escura */
 }
@@ -113,6 +121,7 @@ footer {
   text-align: center;
   padding: 40px 20px;
   font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 footer h2 {
@@ -147,6 +156,7 @@ footer h2 {
 .dark-mode {
   background: #1a1a1a;
   color: #f4f6f8;
+  transition: background 0.3s, color 0.3s;
 }
 
 .dark-mode header,
