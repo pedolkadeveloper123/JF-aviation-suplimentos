@@ -26,6 +26,7 @@ const gavetas = [
       { codigo: "PLAT", localizacao: "13B", itens: ["TUBE FUEL", ""] },
       { codigo: "PLAT", localizacao: "8D", itens: ["TUBE TRANSFERE FUEL", ""] },
       { codigo: "PLAT", localizacao: "5E", itens: ["PACKING PREFORMED", "TUBE TRANSFERE FUEL", "GASKET MANIFOLD",] },
+  { codigo: "PLAT", localizacao: "8E", itens: ["PROTETOR AURICULAR",] },
       { codigo: "ARM4", localizacao: "5A", itens: ["PORCAS SEXTAVADAS", "PORCA ESPECIAL"] },
       { codigo: "ARM4", localizacao: "9D", itens: ["PARAFUSO SEXTAVADO", "PORCA SEXTAVADA EXTRIADA"] },
       { codigo: "ARM4", localizacao: "9C", itens: ["CONTRA PINO GRANDE", ""] },
