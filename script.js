@@ -29,6 +29,7 @@ const gavetas = [
   { codigo: "PLAT", localizacao: "8E", itens: ["PROTETOR AURICULAR",] },
       { codigo: "ARM4", localizacao: "5A", itens: ["PORCAS SEXTAVADAS", "PORCA ESPECIAL"] },
       { codigo: "ARM4", localizacao: "9D", itens: ["PARAFUSO SEXTAVADO", "PORCA SEXTAVADA EXTRIADA"] },
+   { codigo: "ARM1", localizacao: "1F", itens: ["SCREW DE PLÁSTICO",] },
       { codigo: "ARM4", localizacao: "9C", itens: ["CONTRA PINO GRANDE", ""] },
       { codigo: "ARM2", localizacao: "5D", itens: ["PORCA SEXTRAVADA GRANDE", ""] },
       { codigo: "ARM1", localizacao: "3C", itens: ["SEXTAVADO ROSCA TOTAL", "Parafusos"] },
