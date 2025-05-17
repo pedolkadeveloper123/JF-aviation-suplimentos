@@ -2,6 +2,7 @@ const gavetas = [
   { codigo: "ARM1", localizacao: "1A", itens: ["FORWING", "Parafusos"] },
       { codigo: "SUPRI 2", localizacao: "10B", itens: ["ESCOVA DE BORDO"] },
       { codigo: "ARM2", localizacao: "6B", itens: ["ARRUELAS FINAS",] },
+  { codigo: "FERRAMENTARIA", localizacao: "Modulo 5-i", itens: ["Omni Drive Professional",] },
       { codigo: "ARM4", localizacao: "9A", itens: ["ARRUELAS", "DIVERSAS MEDIDAS"] },
       { codigo: "ARM1", localizacao: "5B", itens: ["PARAFUSP 1/8", "PHILLIPS"] },
       { codigo: "FERRAMENTAS", localizacao: "MODULO 20F", itens: ["ALICATE VAZADO 6 FUROS", "ALICATE PARA ILHAS"] },
@@ -56,6 +57,7 @@ const gavetas = [
       { codigo: "ARM3 SUPRI 2", localizacao: "3A", itens: ["PARAFUSO ESTRIVADO 5/16", "DIVERSOS 5/32", "ESTRIADO"] },
       { codigo: "ARM3", localizacao: "5B", itens: ["RUELAS", "DIVERSOS TIPOS"] },
       { codigo: "PLAT", localizacao: "6B", itens: ["RIVET 5X32"] }
+  
   // Adicione o restante dos dados aqui...
 ];
 
