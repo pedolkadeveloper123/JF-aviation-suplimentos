@@ -6,6 +6,7 @@ const gavetas = [
   { codigo: "ARM4", localizacao: "12A", itens: ["TORQUE SEAL",] },
   { codigo: "FERRAMENTARIA", localizacao: "Modulo 5-i", itens: ["Omni Drive Professional",] },
       { codigo: "ARM4", localizacao: "9A", itens: ["ARRUELAS", "DIVERSAS MEDIDAS"] },
+  { codigo: "ARM5", localizacao: "8F", itens: ["GASKET", "ADAPTER", "CLAMP"] },
       { codigo: "ARM1", localizacao: "5B", itens: ["PARAFUSP 1/8", "PHILLIPS"] },
       { codigo: "FERRAMENTAS", localizacao: "MODULO 20F", itens: ["ALICATE VAZADO 6 FUROS", "ALICATE PARA ILHAS"] },
       { codigo: "FERRAMENTAS", localizacao: "CAIXA DE MARTELOS E ALICATE", itens: ["ALICATE DE 6 POSIÇÕES"] },
