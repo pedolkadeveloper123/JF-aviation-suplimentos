@@ -3,6 +3,7 @@ const gavetas = [
    { codigo: "Modulo - FERR", localizacao: "4D", itens: ["Chave de Service Nitrogen NLG"] },
       { codigo: "SUPRI 2", localizacao: "10B", itens: ["ESCOVA DE BORDO"] },
       { codigo: "ARM2", localizacao: "6B", itens: ["ARRUELAS FINAS",] },
+  { codigo: "ARM4", localizacao: "12A", itens: ["TORQUE SEAL",] },
   { codigo: "FERRAMENTARIA", localizacao: "Modulo 5-i", itens: ["Omni Drive Professional",] },
       { codigo: "ARM4", localizacao: "9A", itens: ["ARRUELAS", "DIVERSAS MEDIDAS"] },
       { codigo: "ARM1", localizacao: "5B", itens: ["PARAFUSP 1/8", "PHILLIPS"] },
