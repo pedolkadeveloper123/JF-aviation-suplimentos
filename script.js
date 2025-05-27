@@ -1,5 +1,6 @@
 const gavetas = [
   { codigo: "ARM1", localizacao: "1A", itens: ["FORWING", "Parafusos"] },
+  { codigo: "FERRAMENTAS", localizacao: "MODULO 16-D", itens: ["DE - ICE STRETCHED"] },
    { codigo: "Modulo - FERR", localizacao: "4D", itens: ["Chave de Service Nitrogen NLG"] },
       { codigo: "SUPRI 2", localizacao: "10B", itens: ["ESCOVA DE BORDO"] },
       { codigo: "ARM2", localizacao: "6B", itens: ["ARRUELAS FINAS",] },
