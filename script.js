@@ -60,7 +60,10 @@ const gavetas = [
       { codigo: "ARM4", localizacao: "6B", itens: ["CONTRA PINO"] },
       { codigo: "ARM3 SUPRI 2", localizacao: "3A", itens: ["PARAFUSO ESTRIVADO 5/16", "DIVERSOS 5/32", "ESTRIADO"] },
       { codigo: "ARM3", localizacao: "5B", itens: ["RUELAS", "DIVERSOS TIPOS"] },
+       { codigo: "PLAT", localizacao: "13F", itens: ["PIN, CLAMP, EXTINGUISHER"] },
+       { codigo: "PLAT", localizacao: "12C", itens: ["PLACA DE METAL ESD"] },
       { codigo: "PLAT", localizacao: "6B", itens: ["RIVET 5X32"] }
+  
   
   // Adicione o restante dos dados aqui...
 ];
